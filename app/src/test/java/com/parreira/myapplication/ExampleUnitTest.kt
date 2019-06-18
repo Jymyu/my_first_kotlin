@@ -1,4 +1,4 @@
-package com.parreira.myfirstkotlin
+package com.parreira.myapplication
 
 import org.junit.Test
 
