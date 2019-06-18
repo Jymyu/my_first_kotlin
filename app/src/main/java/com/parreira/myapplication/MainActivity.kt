@@ -5,24 +5,33 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
+import org.w3c.dom.Text
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+     private lateinit var textView: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val text = findViewById<TextView>(R.id.text_view_example1)
-        text.setText(print())}
+        textView = findViewById (R.id.text_view_example1)
+        print("\nYour Fortune is: ${getFortune()}")
+    }
 
-    fun print(): String {
+    private fun print(string : String) {
 
-        var hour = Calendar.getInstance().get(Calendar.HOUR)
+        var hour = string
 
-return hour as String
+        textView.text = hour
 
 
+    }
 
+    private fun getFortune() : String{
+
+        val fortunes = listOf("a", "b", "c", "d")
+        val birthday =  1
+        return fortunes[birthday.rem(fortunes.size)]
     }
 }
